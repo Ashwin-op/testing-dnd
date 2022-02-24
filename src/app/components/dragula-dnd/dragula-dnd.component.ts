@@ -37,12 +37,12 @@ export class DragulaDndComponent implements OnInit {
     },
   ];
 
-  constructor(private dragulaService: DragulaService) {
+  constructor(private dragulaService: DragulaService) {}
+
+  ngOnInit(): void {
     this.dragulaService.createGroup('COLUMNS', {
       direction: 'horizontal',
       moves: (el, source, handle) => handle?.className === 'group-handle',
     });
   }
-
-  ngOnInit(): void {}
 }
